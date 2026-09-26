@@ -1,0 +1,19 @@
+name: Bookmark Startseite
+author: Local Home Assistant user
+slug: bookmark-startseite
+description: Eine übersichtliche, erweiterbare Startseite für deine Bookmarks.
+version: "0.1.0"
+startup: application
+boot: auto
+init: false
+arch:
+  - amd64
+  - aarch64
+ingress: true
+ingress_port: 8099
+panel_icon: mdi:bookmark-multiple-outline
+panel_title: Bookmarks
+map:
+  - config:rw
+options: {}
+schema: {}

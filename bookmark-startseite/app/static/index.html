@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Bookmarks · Startseite</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0b0e14;--surface:#121722;--surface2:#171e2a;--line:#252e3d;--text:#edf2fa;--muted:#8995a8;--accent:#8ba8ff;--accent2:#b5c6ff;--danger:#ff8888;--radius:16px;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -12%,#1b2b49 0,transparent 47%),var(--bg);color:var(--text)}
+    button,input{font:inherit}button{color:inherit}.shell{width:min(1140px,calc(100% - 48px));margin:0 auto;padding:50px 0 72px}
+    .topline{display:flex;align-items:center;justify-content:space-between;margin-bottom:56px}.brand{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:650;letter-spacing:.02em}.brand-mark{width:35px;height:35px;display:grid;place-items:center;border:1px solid #33415a;border-radius:11px;background:linear-gradient(145deg,#253759,#151c2a);color:var(--accent2)}.brand-mark svg{width:18px;height:18px}.top-note{color:var(--muted);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+    .intro{text-align:center;margin:0 auto 36px}.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--accent2);font-size:11px;font-weight:700;letter-spacing:.17em;text-transform:uppercase}.eyebrow:before{content:"";width:18px;height:1px;background:#718dd7}.intro h1{margin:12px 0 8px;font-size:clamp(32px,5vw,48px);line-height:1.08;letter-spacing:-.045em;font-weight:650}.intro p{margin:0;color:var(--muted);font-size:15px}
+    .toolbar{display:flex;gap:11px;align-items:center;max-width:710px;margin:0 auto 44px}.searchbox{height:50px;display:flex;align-items:center;gap:12px;padding:0 15px;flex:1;border:1px solid var(--line);border-radius:13px;background:rgba(18,23,34,.88);box-shadow:0 8px 30px #0002}.searchbox svg{width:18px;height:18px;color:#7f8ca1;flex:0 0 auto}.searchbox input{width:100%;min-width:0;border:0;outline:0;background:transparent;color:var(--text);font-size:14px}.searchbox input::placeholder{color:#778398}.keyhint{padding:3px 6px;border:1px solid #364155;border-radius:5px;color:#8995a8;font-size:11px;white-space:nowrap}.primary{height:50px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:0 17px;border:1px solid #7896ea;border-radius:13px;background:linear-gradient(180deg,#a8bcff,#87a2f6);color:#0d1422;font-size:13px;font-weight:700;white-space:nowrap;cursor:pointer;box-shadow:0 6px 20px #7592ee26;transition:transform .15s,filter .15s}.primary:hover{filter:brightness(1.08);transform:translateY(-1px)}.primary svg{width:16px;height:16px}
+    .overview{display:flex;justify-content:space-between;align-items:center;margin:0 2px 18px;color:var(--muted);font-size:12px}.overview strong{color:#c5cede;font-weight:600}.groups{display:grid;gap:29px}.group-head{display:flex;align-items:center;gap:10px;margin:0 1px 12px}.group-head h2{margin:0;color:#bdc7d7;font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}.group-count{color:#68758a;font-size:11px}.group-line{height:1px;flex:1;background:linear-gradient(90deg,#293344,transparent)}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.card{position:relative;min-width:0;min-height:91px;display:flex;align-items:center;gap:13px;padding:15px 13px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(140deg,rgba(23,30,42,.96),rgba(17,22,32,.96));text-decoration:none;color:inherit;transition:transform .16s,border-color .16s,background .16s}.card:hover{transform:translateY(-2px);border-color:#475875;background:#1a2331}.favicon{width:39px;height:39px;display:grid;place-items:center;flex:0 0 auto;border:1px solid #ffffff14;border-radius:12px;font-size:13px;font-weight:750;letter-spacing:-.03em;color:#e7ecff;background:hsl(var(--hue) 29% 27%)}.card-copy{min-width:0;flex:1}.card-title{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px;font-weight:650;line-height:1.4}.card-url{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-top:4px;color:#8995a8;font-size:11px}.card-actions{display:flex;gap:4px;opacity:0;transition:opacity .14s}.card:hover .card-actions,.card:focus-within .card-actions{opacity:1}.icon-button{width:27px;height:27px;display:grid;place-items:center;border:0;border-radius:8px;background:transparent;color:#9aa7bb;cursor:pointer}.icon-button:hover{background:#ffffff12;color:white}.icon-button.delete:hover{color:var(--danger)}.icon-button svg{width:14px;height:14px}
+    .empty{padding:40px 20px;border:1px dashed #354155;border-radius:16px;text-align:center;background:#11172280}.empty-icon{width:43px;height:43px;display:grid;place-items:center;margin:0 auto 13px;border:1px solid #33415a;border-radius:13px;color:#a8bcff;background:#1b2536}.empty-icon svg{width:20px;height:20px}.empty h2{margin:0 0 6px;font-size:15px}.empty p{margin:0 0 18px;color:var(--muted);font-size:13px}.empty .primary{height:40px;padding:0 14px;font-size:12px}.no-results{padding:36px;text-align:center;color:var(--muted);font-size:13px}.footer{display:flex;justify-content:space-between;margin-top:42px;padding-top:17px;border-top:1px solid #222a37;color:#68758a;font-size:11px}.footer span:last-child{letter-spacing:.05em}
+    dialog{width:min(440px,calc(100% - 28px));padding:0;border:1px solid #364155;border-radius:18px;background:#151b27;color:var(--text);box-shadow:0 24px 90px #0009}dialog::backdrop{background:#03060bc9;backdrop-filter:blur(4px)}.dialog-head{padding:22px 23px 14px}.dialog-head h2{margin:0 0 5px;font-size:18px}.dialog-head p{margin:0;color:var(--muted);font-size:12px}.form-body{padding:0 23px 22px}.field{display:grid;gap:7px;margin-top:14px}.field label{color:#c4cede;font-size:12px;font-weight:600}.field input{height:42px;padding:0 12px;border:1px solid #303b4d;border-radius:10px;outline:0;background:#0f141d;color:var(--text);font-size:13px}.field input:focus{border-color:#7f9af0;box-shadow:0 0 0 3px #829df01f}.form-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:22px}.secondary{height:40px;padding:0 14px;border:1px solid #364155;border-radius:10px;background:#1b2230;color:#c3ccda;font-size:12px;font-weight:600;cursor:pointer}.form-actions .primary{height:40px;font-size:12px}.error{min-height:16px;margin-top:10px;color:#ff9999;font-size:12px}
+    @media(max-width:900px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:650px){.shell{width:min(100% - 30px,520px);padding-top:26px}.topline{margin-bottom:45px}.top-note{display:none}.intro{margin-bottom:27px}.intro p{font-size:13px}.toolbar{gap:8px;margin-bottom:35px}.searchbox{height:46px;padding:0 12px}.keyhint{display:none}.primary{height:46px;padding:0 13px}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.card{min-height:82px;padding:11px 9px;gap:9px}.favicon{width:34px;height:34px;border-radius:10px}.card-title{font-size:12px}.card-url{font-size:10px}.card-actions{position:absolute;right:6px;top:5px;opacity:1}.card-actions .icon-button{width:24px;height:24px;background:#121722d9}.card-copy{padding-right:7px}.overview{font-size:11px}.footer{font-size:10px}}@media(max-width:390px){.cards{grid-template-columns:1fr}.card{min-height:75px}.card-actions{right:8px;top:8px}}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="topline">
+      <div class="brand"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4.75A1.75 1.75 0 0 1 7.75 3H19v17H7.75A1.75 1.75 0 0 1 6 18.25z"/><path d="M6 6H4.5A1.5 1.5 0 0 0 3 7.5v12A1.5 1.5 0 0 0 4.5 21H19M10 8h5m-5 4h5"/></svg></span><span>DEIN DASHBOARD</span></div>
+      <span class="top-note">Alles Wichtige an einem Ort</span>
+    </header>
+    <section class="intro" aria-labelledby="page-title"><span class="eyebrow">Dein persönlicher Startpunkt</span><h1 id="page-title">Willkommen zurück.</h1><p>Deine Links. Übersichtlich sortiert. Direkt erreichbar.</p></section>
+    <div class="toolbar">
+      <label class="searchbox" for="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg><input id="search" type="search" placeholder="Bookmarks durchsuchen …" autocomplete="off" aria-label="Bookmarks durchsuchen"><kbd class="keyhint">/</kbd></label>
+      <button class="primary" id="add-button" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Hinzufügen</button>
+    </div>
+    <div class="overview"><span id="summary">Lade Bookmarks …</span><span>ENTER ↵ zum Öffnen</span></div>
+    <section id="content" class="groups" aria-live="polite"></section>
+    <footer class="footer"><span>Deine private Startseite</span><span>BOOKMARKS · INGRESS</span></footer>
+  </main>
+  <dialog id="bookmark-dialog">
+    <div class="dialog-head"><h2 id="dialog-title">Bookmark hinzufügen</h2><p>Ein Link, den du schnell wiederfinden möchtest.</p></div>
+    <form id="bookmark-form" class="form-body">
+      <input id="bookmark-id" type="hidden">
+      <div class="field"><label for="title">Name</label><input id="title" name="title" maxlength="120" required placeholder="z. B. Home Assistant"></div>
+      <div class="field"><label for="url">URL</label><input id="url" name="url" type="url" maxlength="2048" required placeholder="https://example.com"></div>
+      <div class="field"><label for="category">Bereich</label><input id="category" name="category" maxlength="80" list="category-list" required placeholder="z. B. Smart Home"><datalist id="category-list"></datalist></div>
+      <div class="error" id="form-error" role="alert"></div>
+      <div class="form-actions"><button class="secondary" id="cancel-button" type="button">Abbrechen</button><button class="primary" type="submit">Speichern</button></div>
+    </form>
+  </dialog>
+  <script>
+    const BASE_PATH = __BASE_PATH_JSON__;
+    const API = `${BASE_PATH}/api/bookmarks`;
+    const content = document.querySelector('#content');
+    const summary = document.querySelector('#summary');
+    const search = document.querySelector('#search');
+    const dialog = document.querySelector('#bookmark-dialog');
+    const form = document.querySelector('#bookmark-form');
+    const bookmarks = [];
+    let items = [];
+    const icons = {
+      edit: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m14 5 5 5M4 20l4.2-.8L19 8.4 15.6 5 4.8 15.8 4 20Z"/></svg>',
+      delete: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M10 11v6m4-6v6M6.5 7l.8 13h9.4l.8-13M9 7V4h6v3"/></svg>'
+    };
+    function hueFor(text){let hash=0;for(const c of text)hash=(hash*31+c.charCodeAt(0))|0;return Math.abs(hash)%360}
+    function makeIcon(name){const el=document.createElement('span');el.className='favicon';el.textContent=(name||'?').trim().slice(0,2).toUpperCase();el.style.setProperty('--hue',hueFor(name));return el}
+    function actionButton(label,icon,kind,handler){const button=document.createElement('button');button.type='button';button.className=`icon-button ${kind}`;button.setAttribute('aria-label',label);button.title=label;button.innerHTML=icon;button.addEventListener('click',event=>{event.preventDefault();event.stopPropagation();handler()});return button}
+    function render(){
+      const query=search.value.trim().toLocaleLowerCase('de');
+      const visible=items.filter(item=>[item.title,item.url,item.category].join(' ').toLocaleLowerCase('de').includes(query));
+      const categories=new Map();
+      for(const item of visible){if(!categories.has(item.category))categories.set(item.category,[]);categories.get(item.category).push(item)}
+      summary.innerHTML=`<strong>${items.length}</strong> Bookmarks <span aria-hidden="true">·</span> <strong>${new Set(items.map(item=>item.category)).size}</strong> Bereiche`;
+      content.replaceChildren();
+      if(items.length===0){
+        const empty=document.createElement('div');empty.className='empty';
+        empty.innerHTML='<div class="empty-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4.75A1.75 1.75 0 0 1 7.75 3H19v17H7.75A1.75 1.75 0 0 1 6 18.25z"/><path d="M6 6H4.5A1.5 1.5 0 0 0 3 7.5v12A1.5 1.5 0 0 0 4.5 21H19"/></svg></div><h2>Hier ist Platz für deine Favoriten</h2><p>Lege deinen ersten Bookmark an und finde ihn später mit einem Klick wieder.</p>';
+        const button=document.createElement('button');button.type='button';button.className='primary';button.textContent='Ersten Bookmark hinzufügen';button.addEventListener('click',()=>openDialog());empty.append(button);content.append(empty);return;
+      }
+      if(visible.length===0){const message=document.createElement('div');message.className='no-results';message.textContent='Keine passenden Bookmarks gefunden.';content.append(message);return}
+      for(const [category,groupItems] of [...categories.entries()].sort((a,b)=>a[0].localeCompare(b[0],'de'))){
+        const section=document.createElement('section');section.className='group';
+        const head=document.createElement('div');head.className='group-head';
+        const heading=document.createElement('h2');heading.textContent=category;
+        const count=document.createElement('span');count.className='group-count';count.textContent=String(groupItems.length).padStart(2,'0');
+        const line=document.createElement('span');line.className='group-line';line.setAttribute('aria-hidden','true');head.append(heading,count,line);
+        const grid=document.createElement('div');grid.className='cards';
+        for(const item of groupItems){
+          const card=document.createElement('article');card.className='card';
+          const link=document.createElement('a');link.className='card-copy';link.href=item.url;link.target='_blank';link.rel='noopener noreferrer';link.setAttribute('aria-label',`${item.title} öffnen`);
+          const title=document.createElement('div');title.className='card-title';title.textContent=item.title;
+          let hostname=item.url;try{hostname=new URL(item.url).hostname}catch{}
+          const url=document.createElement('div');url.className='card-url';url.textContent=hostname;
+          link.append(title,url);
+          const actions=document.createElement('div');actions.className='card-actions';
+          actions.append(actionButton('Bearbeiten',icons.edit,'edit',()=>openDialog(item)),actionButton('Löschen',icons.delete,'delete',()=>removeItem(item.id)));
+          card.append(makeIcon(item.title),link,actions);grid.append(card);
+        }
+        section.append(head,grid);content.append(section);
+      }
+    }
+    function openDialog(item=null){
+      form.reset();document.querySelector('#form-error').textContent='';
+      document.querySelector('#bookmark-id').value=item?.id||'';
+      document.querySelector('#title').value=item?.title||'';
+      document.querySelector('#url').value=item?.url||'';
+      document.querySelector('#category').value=item?.category||'';
+      document.querySelector('#dialog-title').textContent=item?'Bookmark bearbeiten':'Bookmark hinzufügen';
+      const categories=[...new Set(items.map(entry=>entry.category))].sort((a,b)=>a.localeCompare(b,'de'));
+      document.querySelector('#category-list').replaceChildren(...categories.map(category=>{const option=document.createElement('option');option.value=category;return option}));
+      dialog.showModal();setTimeout(()=>document.querySelector('#title').focus(),0);
+    }
+    async function persist(next){
+      const response=await fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({bookmarks:next})});
+      const result=await response.json();if(!response.ok)throw new Error(result.error||'Speichern fehlgeschlagen');
+      items=next;render();
+    }
+    async function removeItem(id){if(!confirm('Diesen Bookmark löschen?'))return;try{await persist(items.filter(item=>item.id!==id))}catch(error){alert(error.message)}}
+    form.addEventListener('submit',async event=>{
+      event.preventDefault();const id=document.querySelector('#bookmark-id').value||crypto.randomUUID();
+      const entry={id,title:document.querySelector('#title').value.trim(),url:document.querySelector('#url').value.trim(),category:document.querySelector('#category').value.trim()||'Allgemein'};
+      const next=items.some(item=>item.id===id)?items.map(item=>item.id===id?entry:item):[...items,entry];
+      try{await persist(next);dialog.close()}catch(error){document.querySelector('#form-error').textContent=error.message}
+    });
+    document.querySelector('#add-button').addEventListener('click',()=>openDialog());
+    document.querySelector('#cancel-button').addEventListener('click',()=>dialog.close());
+    search.addEventListener('input',render);
+    document.addEventListener('keydown',event=>{if(event.key==='/'&&document.activeElement!==search&&!(document.activeElement instanceof HTMLInputElement)){event.preventDefault();search.focus()}if(event.key==='Escape'&&dialog.open)dialog.close()});
+    async function load(){try{const response=await fetch(API,{cache:'no-store'});if(!response.ok)throw new Error('HTTP '+response.status);const data=await response.json();items=Array.isArray(data.bookmarks)?data.bookmarks:[];render()}catch(error){summary.textContent='Bookmarks konnten nicht geladen werden';const message=document.createElement('div');message.className='no-results';message.textContent=error.message;content.replaceChildren(message)}}
+    load();
+  </script>
+</body>
+</html>
